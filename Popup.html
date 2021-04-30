@@ -4,6 +4,7 @@
 <style>
 body {font-family: Arial, Helvetica, sans-serif;
     
+    
 }
 
 /* The Modal (background) */
@@ -34,7 +35,7 @@ body {font-family: Arial, Helvetica, sans-serif;
 /* The Close Button */
 .close {
 visibility: visible;
-  color: red;
+  color: Black;
   margin-top: -5px;
   margin-left: -40px;
   float: left;
@@ -45,7 +46,7 @@ visibility: visible;
 }
 .close:hover,
 .close:focus {
-  color: #000;
+  color: red;
   text-decoration: none;
   cursor: pointer;
 }
@@ -63,7 +64,6 @@ visibility: visible;
     z-index: 100050;
     visibility: hidden;
     text-align: center;
-
     align-content: center;
     -webkit-box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
     box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
@@ -110,14 +110,145 @@ element {
     text-align: left;
 }
 
+/*Css for button*/
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.container {
+  height: 0px;
+  position: relative;
+  border: none
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.center1 {
+  margin: 0;
+  top:10%;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.container1{
+    height: 100px;
+    background-color: : red;
+    
+}
 
 </style>
+
+
+<style>
+p {
+  text-align: center;
+  font-size: 55px;
+  margin-top: 0px;
+  color: gold;
+}
+</style>
 </head>
-<body >
-<h2>Modal Example</h2>
+<body>
+
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+
+<div class="container1 center1">
+  <p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+  
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+      
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+</div>
+<div class="container1">
+  
+</div>
+<div class="container1">
+  
+</div>
+<div class="container1">
+  
+</div>
+
+
+
+
+<div class="container">
+  <div class="center">
+    <button id="myBtn" class="btn button ur-submit-button">Register</button>
+  </div>
+</div>
+
 
 <!-- The Modal -->
 
