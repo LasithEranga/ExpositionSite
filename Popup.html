@@ -168,7 +168,8 @@ element {
   margin: 0;
   top:10%;
   position: absolute;
-  left: 50%;
+  left: 51%;
+  min-width: 410px;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -376,7 +377,8 @@ p {
     padding: 10px;
 }
 .miniutes, .hours, .seconds{
-    margin-left: 50px;
+    margin-left: 25px;
+    position: relative;
 }
 #day, #hour, #minute, #second{
     font-size: 20px;
@@ -399,15 +401,20 @@ p{
 
 
 
-<div class="container1 center1">
-  
-  <div class="razar">
-  <div class="ringbase ring1"></div>
-  <div class="ringbase ring2"></div>
-  <div id="Ppos"><p id="day"></p><p>Days</p></div>
-  <div class="pulse"></div>
+<div class="container">
+  <div class ="center1">
+  <div class="razar hours">
+      <div class="ringbase ring1"></div>
+      <div class="ringbase ring2"></div>
+      <div id="Ppos">
+          <p id="day"></p>
+          <p>Days</p>
+      </div>
+  <div class="pulse">
+  </div>
   <div></div>
   </div>
+  
   <div class="razar hours">
   <div class="ringbase ring1"></div>
   <div class="ringbase ring2"></div>
@@ -429,7 +436,8 @@ p{
   <div class="pulse"></div>
   <div></div>
   </div>
-  
+  </div>
+
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Aug 31, 2021 15:37:25").getTime();
