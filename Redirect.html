@@ -1,0 +1,827 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+    
+    
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 1000px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  /*overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  margin: 1px;
+  padding: 0px;*/
+  border: 1px solid #888;
+  width:100%;
+  height: 100%;
+  background-color: white;  
+}
+
+/* The Close Button */
+.close {
+visibility: visible;
+  color: Black;
+  margin-top: -5px;
+  margin-left: -40px;
+  float: left;
+  font-size: 30px;
+  font-weight: bold;
+  padding-left:0px;
+  padding-top: 0px;
+}
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#TB_window.plugin-details-modal {
+    background: none;
+}
+#TB_window {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    right: 0%;
+    background-color: #fff;
+    z-index: 100050;
+    visibility: hidden;
+    text-align: center;
+    align-content: center;
+    -webkit-box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
+    box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
+}
+#TB_closeWindowButton {
+    position: absolute;
+    left: 0px;
+    right: 2%;
+    width: 29px;
+    height: 29px;
+    border: 0;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    color: red;
+    -webkit-transition: color .1s ease-in-out, background .1s ease-in-out;
+    transition: color .1s ease-in-out, background .1s ease-in-out;
+}
+element {
+    visibility: visible;
+}
+.plugin-details-modal #TB_closeWindowButton {
+    left: auto;
+    right: -30px;
+}
+.plugin-details-modal #TB_closeWindowButton {
+    color: #b5b5c8;
+}
+
+.screen-reader-text, .screen-reader-text span, {
+    position: absolute;
+    top: -100em;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+#TB_window {
+    visibility: visible;
+    text-align: left;
+}
+
+/*Css for button*/
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.container {
+  height: 0px;
+  position: relative;
+  border: none
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.center1 {
+  margin: 0;
+  top:10%;
+  position: absolute;
+  left: 51%;
+  min-width: 410px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.container1{
+    height: 100px;
+    background-color: : red;
+    
+}
+
+</style>
+
+
+<style>
+p {
+  text-align: center;
+  font-size: 55px;
+  margin-top: 0px;
+  color: gold;
+}
+</style>
+<style>
+/*css for timer background*/
+<style>
+	body {
+  background-color: #333;
+  padding: 50px;
+}
+
+.razar {
+  float:left;
+  position:relative;
+  width:70px;
+  height:70px;
+  background-size: 100% 100%;
+  border-radius:35px;
+  box-shadow:0 1px 1px 0 rgba(0,0,0,0.4), 0 0 4px 1px rgba(0,0,0,0.2), inset 0 1px 1px 0 rgba(255,255,255,0.2), inset 0 2px 4px 1px rgba(255,255,255,0.1);
+}
+
+.pulse {
+  position:absolute;
+  top:0;
+  left:0;
+  width:70px;
+  height:70px;
+  border-radius:35px;
+  background:gold;
+  -moz-animation: pulsating 2s ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation: pulsating 2s ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity:0.0;
+  z-index:5;
+}
+
+.ringbase {
+  position:absolute;
+  top:0;
+  left:0;
+  width:70px;
+  height:70px;
+  border-radius:35px;
+  opacity:0.0;
+  z-index:10;
+}
+
+.ring1 {
+  box-shadow:0 0 2px 1px #8eb716, inset 0 0 2px 1px gold;
+  -moz-animation: ring 2s ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation: ring 2s ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  animation: ring 2s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.ring2 {
+  box-shadow:0 0 1px 0px #cbe572, inset 0 0 1px 0px gold;
+  -moz-animation: ring 2s ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-delay: 0.5s;
+  -webkit-animation: ring 2s ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay: 0.5s;
+  animation: ring 2s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 0.5s;
+}
+
+@-webkit-keyframes pulsating {
+  0% {opacity: 0.0;}
+  50% {opacity: 0.2;}
+  100% {opacity: 0.0;}
+}
+
+@-moz-keyframes pulsating {
+  0% {opacity: 0.0;}
+  50% {opacity: 0.2;}
+  100% {opacity: 0.0;}
+}
+
+@keyframes pulsating {
+  0% {opacity: 0.0;}
+  50% {opacity: 0.2;}
+  100% {opacity: 0.0;}
+}
+
+@-webkit-keyframes ring {
+  0% {-webkit-transform: scale(0.4, 0.4); opacity: 0.0;}
+  50% {opacity: 0.6;}
+  100% {-webkit-transform: scale(1.1, 1.1); opacity: 0.0;}
+}
+
+@-moz-keyframes ring {
+  0% {-moz-transform: scale(0.4, 0.4); opacity: 0.0;}
+  50% {opacity: 0.6;}
+  100% {-moz-transform: scale(1.1, 1.1); opacity: 0.0;}
+}
+
+@keyframes ring {
+  0% {transform: scale(0.4, 0.4); opacity: 0.0;}
+  50% {opacity: 0.6;}
+  100% {transform: scale(1.1, 1.1); opacity: 0.0;}
+}
+
+
+.pointer {
+  position: absolute;
+  width: 70px;
+  top: 35px;
+  -webkit-animation: circling 2s linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation: circling 2s linear;
+  -moz-animation-iteration-count: infinite;
+  animation: circling 2s linear;
+  animation-iteration-count: infinite;
+  z-index: 20;
+}
+
+.pointer div {
+  width: 49%;
+  border-bottom:2px solid gold;
+}
+
+.dot {
+  opacity: 0;
+  border: 3px solid #e0f4a5;
+  border-radius: 100%;
+  position:absolute;
+  -webkit-animation: blink 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation: blink 2s ease-out;
+  -moz-animation-iteration-count: infinite;
+  animation: blink 2s ease-out;
+  animation-iteration-count: infinite;
+  z-index: 25;
+}
+
+.dot.pos1 {
+  left:10px;
+  top:38px;
+}
+
+.dot.pos2 {
+  left:40px;
+  top:18px;
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+@-webkit-keyframes circling {
+  0% {-webkit-transform: rotate(0deg);}
+  50% {-webkit-transform: rotate(180deg);}
+  100% {-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes circling {
+  0% {-moz-transform: rotate(0deg);}
+  50% {-moz-transform: rotate(180deg);}
+  100% {-moz-transform: rotate(360deg);}
+}
+
+@keyframes circling {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-moz-keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+#Ppos{
+    color: gold;
+    padding: 10px;
+}
+.miniutes, .hours, .seconds{
+    margin-left: 25px;
+    position: relative;
+}
+#day, #hour, #minute, #second{
+    font-size: 20px;
+}
+p{
+    font-size: 10px;
+}
+#minlable,#seclable{
+    padding-left: -300px;
+}
+
+</style>
+
+</head>
+<body>
+
+
+<!-- Trigger/Open The Modal -->
+
+
+
+
+<div class="container">
+  <div class ="center1">
+  <div class="razar hours">
+      <div class="ringbase ring1"></div>
+      <div class="ringbase ring2"></div>
+      <div id="Ppos">
+          <p id="day"></p>
+          <p>Days</p>
+      </div>
+  <div class="pulse">
+  </div>
+  <div></div>
+  </div>
+  
+  <div class="razar hours">
+  <div class="ringbase ring1"></div>
+  <div class="ringbase ring2"></div>
+  <div id="Ppos"><p id="hour"></p><p>Hours</p></div>
+  <div class="pulse"></div>
+  <div></div>
+  </div>
+  <div class="razar miniutes">
+  <div class="ringbase ring1"></div>
+  <div class="ringbase ring2"></div>
+  <div id="Ppos"><p id="minute"></p><p id="minlable">Minutes</p></div>
+  <div class="pulse"></div>
+  <div></div>
+  </div>
+  <div class="razar seconds">
+  <div class="ringbase ring1"></div>
+  <div class="ringbase ring2"></div>
+  <div id="Ppos"><p id="second"></p><p id="seclable">Seconds</p></div>
+  <div class="pulse"></div>
+  <div></div>
+  </div>
+  </div>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 31, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+  
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("day").innerHTML = days;
+  document.getElementById("hour").innerHTML = hours;
+  document.getElementById("minute").innerHTML = minutes;
+  document.getElementById("second").innerHTML = seconds;
+      
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+</div>
+<div class="container1">
+
+</div>
+
+
+<div class="container1">
+<!--Start -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
+
+  <style media="" data-href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	  button,hr,input{
+		  overflow:visible
+	  }
+	  audio,canvas,progress,video{
+		  display:inline-block
+	  }
+	  progress,sub,sup{
+		  vertical-align:baseline
+	  }
+	  html{
+		  font-family:sans-serif;
+		  line-height:1.15;
+		  -ms-text-size-adjust:100%;
+		  -webkit-text-size-adjust:100%
+	  }
+	  body{
+		  margin:0
+	  } 
+	  menu,article,aside,details,footer,header,nav,section{
+		  display:block
+	  }
+	  h1{
+		  font-size:2em;margin:.67em 0
+	  }
+	  figcaption,figure,main{
+		  display:block
+	  }
+	  figure{
+		  margin:1em 40px
+	  }
+	  hr{
+		  box-sizing:content-box;
+		  height:0
+	  }
+	  code,kbd,pre,samp{font-family:monospace,monospace;
+		  font-size:1em
+	  }
+	  a{
+		  background-color:transparent;
+		  -webkit-text-decoration-skip:objects
+	  }
+	  a:active,a:hover{
+		  outline-width:0
+	  }
+	  abbr[title]{
+		  border-bottom:none;
+		  text-decoration:underline;
+		  text-decoration:underline dotted
+	  }
+	  b,strong{
+		  font-weight:bolder
+	  }
+	  dfn{
+		  font-style:italic
+	  }
+	  mark{
+		  background-color:#ff0;
+		  color:#000
+	  }
+	  small{
+		  font-size:80%
+	  }
+	  sub,sup{
+		  font-size:75%;
+		  line-height:0;
+		  position:relative
+	  }
+	  sub{
+		  bottom:-.25em
+	  }
+	  sup{
+		  top:-.5em
+	  }
+	  audio:not([controls]){
+		  display:none;
+		  height:0
+	  }
+	  img{
+		  border-style:none
+	  }
+	  svg:not(:root){
+		  overflow:hidden
+	  }
+	  button,input,optgroup,select,textarea{
+		  font-family:sans-serif;
+		  font-size:100%;
+		  line-height:1.15;
+		  margin:0
+	  }
+	  button,input{
+		  
+	  }
+	  button,select{
+		  text-transform:none
+	  }
+	  [type=submit], [type=reset],button,html [type=button]{
+		  -webkit-appearance:button
+	  }
+	  [type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{
+		  border-style:none;padding:0
+	  }
+	  [type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{
+		  outline:ButtonText dotted 1px
+	  }
+	  fieldset{
+		  border:1px solid silver;
+		  margin:0 2px;
+		  padding:.35em .625em .75em
+	  }
+	  legend{
+		  box-sizing:border-box;
+		  color:inherit;
+		  display:table;
+		  max-width:100%;
+		  padding:0;
+		  white-space:normal
+	  }
+	  progress{}textarea{
+		  overflow:auto
+	  }
+	  [type=checkbox],[type=radio]{
+		  box-sizing:border-box;padding:0
+	  }
+	  [type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{
+		  -webkit-appearance:textfield;outline-offset:-2px
+	  }[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{
+		  -webkit-appearance:none
+	  }::-webkit-file-upload-button{
+		  -webkit-appearance:button;font:inherit
+	  }
+	  summary{
+		  display:list-item
+	  }
+	  [hidden],template{
+		  display:none
+	  }/*# sourceMappingURL=normalize.min.css.map */</style>
+
+  
+  
+<style>
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+body, html {
+  height: 100%;
+  font-size: 20px;
+  font-family: Source Sans Pro;
+}
+
+
+.bb {
+  display: none;
+}
+
+#go {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  color: white;
+  border: 0;
+  background: #71c341;
+  width: 100px;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+  outline: none;
+}
+#go:hover {
+  background: #8ecf68;
+}
+#go:active {
+  background: #5a9f32;
+}
+
+.message {
+		
+background-color: #363636;
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  width: 300px;
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  font-weight: 300;
+  color: #2c2928;
+  opacity: 0;
+  transition: top 0.3s cubic-bezier(0.31, 0.25, 0.5, 1.5), opacity 0.2s ease-in-out;
+}
+.message .check {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(4);
+  width: 120px;
+  height: 110px;
+  background: #71c341;
+  color: white;
+  font-size: 3.8rem;
+  padding-top: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: transform 0.2s 0.25s cubic-bezier(0.31, 0.25, 0.5, 1.5), opacity 0.1s 0.25s ease-in-out;
+}
+.message .scaledown {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.message p {
+  font-size: 1.1rem;
+  margin: 25px 0px;
+  padding: 0;
+}
+.message p:nth-child(2) {
+  font-size: 2.3rem;
+  margin: 40px 0px 0px 0px;
+}
+.message #ok {
+  position: relative;
+  color: white;
+  border: 0;
+  background: #71c341;
+  width: 100%;
+  height: 50px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  transition: background 0.2s ease;
+  outline: none;
+  padding-bottom: 45px;
+}
+.message #ok:hover {
+  background: #8ecf68;
+}
+.message #ok:active {
+  background: #5a9f32;
+}
+
+.comein {
+  top: 150px;
+  opacity: 1;
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<div class="message">
+  <div class="check">
+    ✔
+  </div>
+  <p>
+    Success
+  </p>
+  <p>
+    Registration Completed!
+  </p>
+  <button id="ok">
+    OK
+  </button>
+</div>
+  
+<!--scripts for functionality-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script id="rendered-js">
+	
+	$('#ok').click(function () {go(500);});
+
+	setTimeout(function () {go(50);}, 45000);
+	setTimeout(function () {go(500);}, 200);
+
+	function go(time) {
+	  $('.message').toggleClass('comein');
+	  $('.check').toggleClass('scaledown');
+	  $('#go').fadeToggle(time);
+	}
+    </script>
+
+<!--End -->
+</div>
+<div class="container1">
+  
+</div>
+
+
+
+
+<div class="container">
+  <div class="center">
+    <button id="myBtn" class="btn button ur-submit-button">Register</button>
+  </div>
+</div>
+
+
+
+
+<!-- The Modal -->
+
+<div id="TB_window" class="plugin-details-modal" style="width:100%; height: 100%; top: 30px; margin-top: 0px; visibility: visible;" role="dialog" aria-label="Plugin details">
+    <div id="TB_title">
+        
+        <div id="TB_ajaxWindowTitle">
+            <div id="TB_closeWindowButton" class="modal-content close">
+                <span class="close">&times;</span>
+            </div>
+            </div><div id="TB_closeAjaxWindow">
+            
+            <!--<button type="button" id="TB_closeWindowButton" class="close1">X</button>
+                <span class="screen-reader-text">Close</span>
+                -->
+                </div></div>
+            
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("TB_window");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>
