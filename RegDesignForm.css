@@ -2,17 +2,17 @@
 	display:none;
 }
 .ur-label,.input-text ,.input-text,.ur-frontend-field {
-	color:white
+	color:#C8D5E6
 	
 }
 #first_name,#last_name, #user_email,#user_pass,#user_confirm_password,#input_box_1620490824{
 	
 	border-radius:0px;
-	border:1px solid white;
-	color:#A2AFC2;
+	border:1px solid #C8D5E6;
+	color:#C8D5E6; 
 }
 #select_1620490661{
-	background-color:black;
+	background-color:none;
 }
 #user-registration-form-21{
 	border:none;
@@ -25,13 +25,16 @@
 }
 .ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"]{
 	line-height: 1.0;
+	
 }
 .ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"]{
-	padding: 8px 106px;
-	margin-top:40px;
+	padding: 8px 112px;
+	margin-top:25px;
+	background-color:#1DD6B7;
+	border-radius:0px;
 }
 .ur-frontend-form .ur-submit-button{
-	margin-right: 28px;
+	margin-right: 31px;
 }
 .ur-frontend-form .ur-form-row .ur-form-grid .__PrivateStripeElement, .ur-frontend-form .ur-form-row .ur-form-grid input[type="date"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="email"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="number"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="password"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="phone"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="text"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="timepicker"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="url"], .ur-frontend-form .ur-form-row .ur-form-grid select, .ur-frontend-form .ur-form-row .ur-form-grid textarea {
     width: 84%;
@@ -62,3 +65,7 @@
 #last_name_field,#user_email_field,#user_pass_field,#input_box_1620490824_field,#select_1620490661_field{
 	margin-top:20px;
 }
+.wpac-form{
+	margin-bottom:21px;
+}
+
