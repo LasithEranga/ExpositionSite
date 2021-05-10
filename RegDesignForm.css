@@ -1,0 +1,64 @@
+.site-info{
+	display:none;
+}
+.ur-label,.input-text ,.input-text,.ur-frontend-field {
+	color:white
+	
+}
+#first_name,#last_name, #user_email,#user_pass,#user_confirm_password,#input_box_1620490824{
+	
+	border-radius:0px;
+	border:1px solid white;
+	color:#A2AFC2;
+}
+#select_1620490661{
+	background-color:black;
+}
+#user-registration-form-21{
+	border:none;
+}
+.ur-frontend-form{
+	margin-bottom: 0px;
+}
+.ur-frontend-form .ur-form-row .ur-form-grid label, .ur-frontend-form .ur-form-row .ur-form-grid legend{
+	margin-bottom: 0px;
+}
+.ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"]{
+	line-height: 1.0;
+}
+.ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"]{
+	padding: 8px 106px;
+	margin-top:40px;
+}
+.ur-frontend-form .ur-submit-button{
+	margin-right: 28px;
+}
+.ur-frontend-form .ur-form-row .ur-form-grid .__PrivateStripeElement, .ur-frontend-form .ur-form-row .ur-form-grid input[type="date"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="email"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="number"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="password"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="phone"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="text"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="timepicker"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="url"], .ur-frontend-form .ur-form-row .ur-form-grid select, .ur-frontend-form .ur-form-row .ur-form-grid textarea {
+    width: 84%;
+    min-height: 30px;
+		max-height:30px;
+    margin-bottom: -1px;
+    line-height: 1.0;
+    margin-left: 24px;
+}
+.ur-frontend-form .ur-form-row .ur-form-grid label, .ur-frontend-form .ur-form-row .ur-form-grid legend {
+    display: block;
+    font-size: 12px;
+    margin-top: 0px;
+    margin-left: 24px;
+}
+.ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item {
+    margin-bottom: 9px;
+}
+.ur-frontend-form {
+    margin-bottom: 120px;
+}
+.ur-frontend-form .ur-form-row .ur-form-grid {
+    flex: 1;
+    padding: 0 13px;
+    margin-top: 19vh;
+}
+
+#last_name_field,#user_email_field,#user_pass_field,#input_box_1620490824_field,#select_1620490661_field{
+	margin-top:20px;
+}
