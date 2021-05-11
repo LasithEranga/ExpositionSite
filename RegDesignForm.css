@@ -25,12 +25,13 @@
 }
 .ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"]{
 	line-height: 1.0;
-	
+	color:gold;
+	text-decoration:bold;
 }
 .ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"]{
 	padding: 8px 104px;
 	margin-top:3.822vh;
-	background-color:#1DD6B7;
+	background-color:black;
 	border-radius:0px;
 }
 .ur-frontend-form .ur-submit-button{
@@ -68,5 +69,12 @@
 .wpac-form{
 	margin-bottom:3.2vh;
 }
-
+#user_pass_field{
+	display:none;
+}
+.ur-frontend-form #ur-submit-message-node {
+	  margin-top:20px;
+	  margin-bottom:-88px;
+	  margin-left:35px;
+}
 
