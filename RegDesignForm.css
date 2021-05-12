@@ -30,7 +30,7 @@
 }
 .ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"]{
 	padding: 8px 104px;
-	margin-top:3.822vh;
+	margin-top:25px;
 	background-color:black;
 	border-radius:0px;
 }
@@ -39,8 +39,8 @@
 }
 .ur-frontend-form .ur-form-row .ur-form-grid .__PrivateStripeElement, .ur-frontend-form .ur-form-row .ur-form-grid input[type="date"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="email"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="number"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="password"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="phone"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="text"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="timepicker"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="url"], .ur-frontend-form .ur-form-row .ur-form-grid select, .ur-frontend-form .ur-form-row .ur-form-grid textarea {
     width: 84%;
-    min-height: 4.5871vh;
-		max-height:4.5871vh;
+    min-height: 30px;
+		max-height:30px;
     margin-bottom: -1px;
     line-height: 1.0;
     margin-left: 40px;
@@ -52,22 +52,22 @@
     margin-left: 40px;
 }
 .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item {
-    margin-bottom: 1.37vh;
+    margin-bottom: 9px;
 }
 .ur-frontend-form {
-    margin-bottom: 18.34vh;
+    margin-bottom: 120px;
 }
 .ur-frontend-form .ur-form-row .ur-form-grid {
     flex: 1;
-    padding: 0 1.98vh;
-    margin-top: 19vh;
+    padding: 0 13px;
+    margin-top: 124px;
 }
 
 #last_name_field,#user_email_field,#user_pass_field,#input_box_1620490824_field,#select_1620490661_field{
-	margin-top:3.06vh;
+	margin-top:20px;
 }
 .wpac-form{
-	margin-bottom:3.2vh;
+	margin-bottom:20px;
 }
 #user_pass_field{
 	display:none;
@@ -77,4 +77,19 @@
 	  margin-bottom:-88px;
 	  margin-left:35px;
 }
+.elementor img {
+	min-height:613px;
+	max-height:613px;
+}
+.elementor-179 .elementor-element.elementor-element-9ccf875 {
+    min-height: 664px;
+	  max-height:664px;
+}
+/*.ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"] {
+    padding: 8px 24px;
+    margin-top: 25px;
+    background-color: black;
+    border-radius: 0px;
+    margin-right: 116px;
+} mobile view*/
 
