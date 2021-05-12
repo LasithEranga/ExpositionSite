@@ -29,16 +29,17 @@
 	text-decoration:bold;
 }
 .ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"]{
-	padding: 8px 104px;
-	margin-top:25px;
+	padding: 8px 99px;
+	margin-top:30px;
 	background-color:black;
 	border-radius:0px;
+	
 }
 .ur-frontend-form .ur-submit-button{
 	margin-right: 13px;
 }
 .ur-frontend-form .ur-form-row .ur-form-grid .__PrivateStripeElement, .ur-frontend-form .ur-form-row .ur-form-grid input[type="date"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="email"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="number"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="password"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="phone"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="text"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="timepicker"], .ur-frontend-form .ur-form-row .ur-form-grid input[type="url"], .ur-frontend-form .ur-form-row .ur-form-grid select, .ur-frontend-form .ur-form-row .ur-form-grid textarea {
-    width: 84%;
+    width: 250px;
     min-height: 30px;
 		max-height:30px;
     margin-bottom: -1px;
@@ -85,11 +86,42 @@
     min-height: 664px;
 	  max-height:664px;
 }
-/*.ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"] {
-    padding: 8px 24px;
-    margin-top: 25px;
-    background-color: black;
-    border-radius: 0px;
-    margin-right: 116px;
-} mobile view*/
+@media screen and (max-width: 768px){.elementor-column {
+    max-width: 360px;
+	  min-width: 360px;
+    margin: auto;
+	}
+	.ur-frontend-form, 
+	.ur-button-container{
+		padding: 2px 55px;
+	}
+	.ur-frontend-form,
+	.ur-form-row,
+	.ur-form-grid {
+		margin-left: -10px;
+	}
+	.elementor-column-gap-default > .elementor-column > .elementor-element-populated{
+		padding:0px;
+	}
+	
+	
+}
+@media screen and (max-width: 400px){
+	.elementor-column {
+    max-width: 320px;
+	  min-width: 320px;
+    margin: auto;
+	}
+	.ur-frontend-form, 
+	.ur-button-container{
+		padding: 2px 25px;
+	}
+	.ur-frontend-form,
+	.ur-form-row,
+	.ur-form-grid {
+		margin-left: -1px;
+	}
+	
+}
+
 
