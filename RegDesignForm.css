@@ -51,9 +51,11 @@
     font-size: 12px;
     margin-top: 0px;
     margin-left: 40px;
+	
 }
 .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item {
     margin-bottom: 9px;
+	
 }
 .ur-frontend-form {
     margin-bottom: 120px;
@@ -62,10 +64,12 @@
     flex: 1;
     padding: 0 13px;
     margin-top: 124px;
+	
 }
 
 #last_name_field,#user_email_field,#user_pass_field,#input_box_1620490824_field,#select_1620490661_field{
 	margin-top:20px;
+	
 }
 .wpac-form{
 	margin-bottom:20px;
@@ -106,21 +110,51 @@
 	
 	
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 769px){
 	.elementor-column {
     max-width: 320px;
 	  min-width: 320px;
-    margin: auto;
+		padding-right:20px;
+		margin: auto;
 	}
+	.ur-frontend-form button,    		.ur-frontend-form 		button[type="submit"], .ur-frontend-form input[type="submit"]{
+	border-radius:20px;
+	padding: 10px 93px;
+}
 	.ur-frontend-form, 
 	.ur-button-container{
-		padding: 2px 25px;
+		padding: 10px 4px;
 	}
 	.ur-frontend-form,
 	.ur-form-row,
 	.ur-form-grid {
-		margin-left: -1px;
+		margin-left: 4px;
 	}
+	#first_name, #last_name, #user_email, #user_pass, #user_confirm_password, #input_box_1620490824,#select_1620490661 {
+    border-radius: 20px;
+    border: 1px solid #C8D5E6;
+    color: #C8D5E6;
+}
+	
+}
+@media screen and (max-width: 480px){
+	.ur-frontend-form button,    		.ur-frontend-form 		button[type="submit"], .ur-frontend-form input[type="submit"]{
+	border-radius:20px;
+	padding: 10px 99px;
+}
+}
+@media screen and (max-width: 360px){
+	.elementor-column {
+    max-width: 320px;
+	  min-width: 320px;
+		padding-right:20px;
+		margin: auto;
+		margin-left:15px;
+	}
+	.ur-frontend-form button,    		.ur-frontend-form 		button[type="submit"], .ur-frontend-form input[type="submit"]{
+	border-radius:20px;
+	padding: 10px 99px;
+}
 	
 }
 
