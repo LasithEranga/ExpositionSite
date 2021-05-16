@@ -142,6 +142,9 @@
 	border-radius:20px;
 	padding: 10px 99px;
 }
+	.elementor-179 .elementor-element.elementor-element-9ccf875:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-179 .elementor-element.elementor-element-9ccf875 > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-color: #335c715e;
+}
 }
 @media screen and (max-width: 360px){
 	.elementor-column {
@@ -154,6 +157,9 @@
 	.ur-frontend-form button,    		.ur-frontend-form 		button[type="submit"], .ur-frontend-form input[type="submit"]{
 	border-radius:20px;
 	padding: 10px 99px;
+}
+	.elementor-179 .elementor-element.elementor-element-9ccf875:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-179 .elementor-element.elementor-element-9ccf875 > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-color: #335c715e;
 }
 	
 }
