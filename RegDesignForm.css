@@ -29,7 +29,7 @@
 	text-decoration:bold;
 }
 .ur-frontend-form button, .ur-frontend-form button[type="submit"], .ur-frontend-form input[type="submit"]{
-	padding: 8px 99px;
+	padding: 8px 94px;
 	margin-top:30px;
 	background-color:black;
 	border-radius:0px;
@@ -90,7 +90,7 @@
     min-height: 664px;
 	  max-height:664px;
 }
-@media screen and (max-width: 768px){.elementor-column {
+@media screen and (max-width: 767px){.elementor-column {
     max-width: 360px;
 	  min-width: 360px;
     margin: auto;
@@ -110,7 +110,7 @@
 	
 	
 }
-@media screen and (max-width: 769px){
+@media screen and (max-width: 767px){
 	.elementor-column {
     max-width: 320px;
 	  min-width: 320px;
@@ -135,6 +135,9 @@
     border: 1px solid #C8D5E6;
     color: #C8D5E6;
 }
+	.elementor-179 .elementor-element.elementor-element-9ccf875:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-179 .elementor-element.elementor-element-9ccf875 > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-color: #335c715e;
+}
 	
 }
 @media screen and (max-width: 480px){
@@ -144,6 +147,7 @@
 }
 	.elementor-179 .elementor-element.elementor-element-9ccf875:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-179 .elementor-element.elementor-element-9ccf875 > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-color: #335c715e;
+		max-height:900px;
 }
 }
 @media screen and (max-width: 360px){
@@ -163,5 +167,50 @@
 }
 	
 }
+@media screen and (max-width: 767px){
+	.elementor-179 .elementor-element.elementor-element-e7063c5:not(.elementor-motion-effects-element-type-background), .elementor-179 .elementor-element.elementor-element-e7063c5 > .elementor-motion-effects-container > .elementor-motion-effects-layer{
+		min-height: 825px;
+	}
+}
+@media screen and (max-width: 1023px){
+	.elementor-179 .elementor-element.elementor-element-e7063c5:not(.elementor-motion-effects-element-type-background), .elementor-179 .elementor-element.elementor-element-e7063c5 > .elementor-motion-effects-container > .elementor-motion-effects-layer{
+		min-height: 825px;
+	}
+	.elementor img {
+    min-height: 615px;
+    max-height: 613px;
+    margin-top: 3px;
+}
+}
+@media screen and (min-width: 1024px){
+	.elementor-179 .elementor-element.elementor-element-e7063c5:not(.elementor-motion-effects-element-type-background), .elementor-179 .elementor-element.elementor-element-e7063c5 > .elementor-motion-effects-container > .elementor-motion-effects-layer{
+		min-height: 700px;
+	}
+	.elementor img {
+    min-height: 615px;
+    max-height: 613px;
+    margin-top: 0px;
+	}.elementor-179 .elementor-element.elementor-element-e7063c5 {
+		    margin-top: -1%;
+		
+	}
+}
+.user-registration-message {
+    border-top-color: #3de60d;
+    background: rgb(15 226 21 / 10%);
+    color: #36e00c;
+}
+@media screen and (max-width: 330px){
+.elementor-column {
+    max-width: 300px;
+    min-width: 300px;
+	margin-left: 7px;
+	}
+.ur-frontend-form .ur-button-container {
+	    padding: 0px 0px;
+ }
+}
+
+
 
 
