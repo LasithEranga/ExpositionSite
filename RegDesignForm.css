@@ -181,10 +181,17 @@
     max-height: 613px;
     margin-top: 3px;
 }
+	.elementor-179 .elementor-element.elementor-element-e7063c5 {
+		    margin-top: -1%;
+		
+	}
+	.elementor-section.elementor-section-height-full>.elementor-container {
+    height: 73%;
+}
 }
 @media screen and (min-width: 1024px){
 	.elementor-179 .elementor-element.elementor-element-e7063c5:not(.elementor-motion-effects-element-type-background), .elementor-179 .elementor-element.elementor-element-e7063c5 > .elementor-motion-effects-container > .elementor-motion-effects-layer{
-		min-height: 700px;
+		min-height: 750px;
 	}
 	.elementor img {
     min-height: 615px;
@@ -210,6 +217,12 @@
 	    padding: 0px 0px;
  }
 }
+.elementor-179 .elementor-element.elementor-element-e7063c5:not(.elementor-motion-effects-element-type-background), .elementor-179 .elementor-element.elementor-element-e7063c5 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-position: -0px -0px;
+}
+
+
+
 
 
 
