@@ -1,6 +1,9 @@
 .site-info{
 	display:none;
 }
+#select_1620490661{
+	color:black;
+}
 .ur-label,.input-text ,.input-text,.ur-frontend-field {
 	color:#C8D5E6
 	
@@ -138,6 +141,13 @@
 	.elementor-179 .elementor-element.elementor-element-9ccf875:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-179 .elementor-element.elementor-element-9ccf875 > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-color: #335c715e;
 }
+	.ur-frontend-form #ur-submit-message-node {
+    margin-top: 12px;
+    margin-bottom: -49px;
+    margin-left: 44px;
+    padding-top: 9px;
+    padding-bottom: 20px;
+}
 	
 }
 @media screen and (max-width: 480px){
@@ -171,6 +181,11 @@
 	.elementor-179 .elementor-element.elementor-element-e7063c5:not(.elementor-motion-effects-element-type-background), .elementor-179 .elementor-element.elementor-element-e7063c5 > .elementor-motion-effects-container > .elementor-motion-effects-layer{
 		min-height: 825px;
 	}
+	
+	#last_name-error,#first_name-error,#user_email-error,#input_box_1620490824-error{
+		width: 200px;
+	}
+	
 }
 @media screen and (max-width: 1023px){
 	.elementor-179 .elementor-element.elementor-element-e7063c5:not(.elementor-motion-effects-element-type-background), .elementor-179 .elementor-element.elementor-element-e7063c5 > .elementor-motion-effects-container > .elementor-motion-effects-layer{
@@ -182,12 +197,18 @@
     margin-top: 3px;
 }
 	.elementor-179 .elementor-element.elementor-element-e7063c5 {
-		    margin-top: -1%;
+		    margin-top: 0%;
 		
 	}
 	.elementor-section.elementor-section-height-full>.elementor-container {
     height: 73%;
 }
+	#last_name-error,#first_name-error,#user_email-error,#input_box_1620490824-error{
+		width: 231px;
+		margin-top: -30px;
+		height: 30px;
+		margin-left: 49px;
+	}
 }
 @media screen and (min-width: 1024px){
 	.elementor-179 .elementor-element.elementor-element-e7063c5:not(.elementor-motion-effects-element-type-background), .elementor-179 .elementor-element.elementor-element-e7063c5 > .elementor-motion-effects-container > .elementor-motion-effects-layer{
@@ -198,8 +219,13 @@
     max-height: 613px;
     margin-top: 0px;
 	}.elementor-179 .elementor-element.elementor-element-e7063c5 {
-		    margin-top: -1%;
+		    margin-top: 0%;
 		
+	}
+	#last_name-error,#first_name-error,#user_email-error,#input_box_1620490824-error{
+		width: 250px;
+		margin-top: -30px;
+		height: 30px;
 	}
 }
 .user-registration-message {
@@ -207,6 +233,7 @@
     background: rgb(15 226 21 / 10%);
     color: #36e00c;
 }
+
 @media screen and (max-width: 330px){
 .elementor-column {
     max-width: 300px;
@@ -220,6 +247,12 @@
 .elementor-179 .elementor-element.elementor-element-e7063c5:not(.elementor-motion-effects-element-type-background), .elementor-179 .elementor-element.elementor-element-e7063c5 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-position: -0px -0px;
 }
+
+.user-registration-error::before, .user-registration-info::before, .user-registration-message::before{
+	margin-top:-10px;
+}
+
+
 
 
 
