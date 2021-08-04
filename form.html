@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="width=device-width, initial-scale=1.0"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">
+
+    <style>
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #a6c7e859;
+  border-radius:5px;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 18px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 10px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #a6c7e859;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+</style>
+
+
+
+    <style>
+
+      html{
+        scrollbar-width:none;
+      }
+      label{
+    font-weight:600;
+      }
+
+@media screen and (min-width: 576px) {
+    .box{
+        width: 80%;
+    
+    }
+}
+
+@media screen and (min-width:768px) {
+    .box{
+        width: 60%;
+    
+    }
+}
+
+@media screen and (min-width:992px) {
+    .box{
+        width: 50%;
+    
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .box{
+        width: 40%;
+    
+    }
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #fff0;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+  color: #ffffff;
+  background-color: #fff0;
+  border-color: rgb(7, 251, 91);
+  outline: 0;
+  box-shadow: 0 0 0 0.15rem rgba(50, 221, 141, 0.6);
+}
+.form-select:focus {
+  border-color: rgb(7, 251, 91);
+  outline: 0;
+  box-shadow: 0 0 0 0.15rem rgba(50, 221, 141, 0.6);
+}
+
+
+.btn-outline-success {
+  color: #10b981;
+  border-color: #10b981;
+}
+.btn-outline-success:hover {
+  color: #fff;
+  background-color: #10b981;
+  border-color: #10b981;
+}
+.btn-check:checked + .btn-outline-success, .btn-check:active + .btn-outline-success, .btn-outline-success:active, .btn-outline-success.active, .btn-outline-success.dropdown-toggle.show {
+  color: #fff;
+  background-color: #19875400;
+  border-color: #19875400;
+}
+.btn-outline-success:focus {
+    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, 0);
+}
+.btn-check:checked + .btn-outline-success:focus, .btn-check:active + .btn-outline-success:focus, .btn-outline-success:active:focus, .btn-outline-success.active:focus, .btn-outline-success.dropdown-toggle.show:focus {
+  box-shadow: 0 0 0 0.25rem rgba(15, 245, 138, 0);
+}
+
+
+body{
+   //background-image:url('https://registration.exposition.lk/wp-content/uploads/2021/05/BackgroudAsset-436x-80.jpg');
+   background-color:#020f1f;
+}
+
+
+.invalid{
+  border-color: #dc3545;
+padding-right: calc(1.5em + .75rem);
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+background-repeat: no-repeat;
+background-position: right calc(.375em + .1875rem) center;
+background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+.form-control-invalid {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #fff0;
+  background-clip: padding-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control-invalid:focus{
+   border-color: #dc3545;
+   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+.correct{
+  border-color: #198754;
+padding-right: calc(1.5em + .75rem);
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+background-repeat: no-repeat;
+background-position: right calc(.375em + .1875rem) center;
+background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+.correct:focus{
+   border-color: #198754;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+
+.background{
+background: #ffffff;
+background: linear-gradient(to bottom, #ffffff 0%,#e1e8ed 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e8ed',GradientType=0 );
+    height: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+  
+}
+
+.wrapper-1{
+  width:100%;
+  height:100vh;
+  display: flex;
+flex-direction: column;
+}
+.wrapper-2{
+  padding :30px;
+  text-align:center;
+}
+h1{
+    font-family: 'Kaushan Script', cursive;
+  font-size:4em;
+  letter-spacing:4px;
+  color:#b08936 ;
+  margin:0;
+  margin-bottom:20px;
+}
+.wrapper-2 p{
+  margin:0;
+  font-size:1.3em;
+  color:#aaa;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing:1px;
+}
+.go-home{
+  color:#fff;
+  background:#5892FF;
+  border:none;
+  padding:10px 50px;
+  margin:30px 0;
+  border-radius:30px;
+  text-transform:capitalize;
+  box-shadow: 0 10px 16px 1px rgba(174, 199, 251, 1);
+}
+.footer-like{
+  margin-top: auto; 
+  background:#D7E6FE1C;
+  padding:6px;
+  text-align:center;
+}
+.footer-like p{
+  margin:0;
+  padding:4px;
+  color:#5892FF;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing:1px;
+}
+.footer-like p a{
+  text-decoration:none;
+  color:#5892FF;
+  font-weight:600;
+}
+
+@media (min-width:360px){
+  h1{
+    font-size:4.5em;
+  }
+  .go-home{
+    margin-bottom:20px;
+  }
+}
+
+@media (min-width:600px){
+  .content{
+  max-width:1000px;
+  margin:0 auto;
+}
+  .wrapper-1{
+  height: initial;
+  max-width:620px;
+  margin:0 auto;
+  margin-top:25px;
+  box-shadow: 4px 8px 40px 8px rgba(88, 146, 255, 0.2);
+}
+  
+}
+.space{
+  display:block;
+}
+.hide{
+  display:none;
+}
+
+
+.setCenter{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.btn-outline-info{
+  border-color:#ffffff;
+}
+.btn-outline-info:hover{
+  color:white;
+  border-color:#11c85e;
+  background-color:transparent;
+
+}
+</style>
+    
+    <title>Document</title>
+    <script>
+      var file = false;
+    </script>
+</head>
+<body class="">
+
+    <div id="thankYou" class="container setCenter py-4 px-4" style="display:none;" >
+        <div class=content>
+        <div class="wrapper-1">
+        <div class="wrapper-2">
+      <h1>Thank you !</h1>
+      <p>Thanks for registering with Exposition 2021.  </p>
+      
+    </div>
+    <div class="footer-like">
+      <p>Need more info? Please contact <a href="https://exposition.lk/#testimonial" target="_blank">Team Exposition.</a>
+      </p>
+    </div>
+</div>
+</div>
+
+    </div>
+    
+    <div id="formContainer" class="container box  px-4" style="color:white">
+        <h1 class="display-6 text-center fw-bold py-2" >Register Now!</h1>
+        <div action="" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="" class="form-label">First Name <span style="color:red;">*</span></label>
+            <input autocomplete="off" id ="fname" type="text" class="form-control"  required>
+            <div class="invalid-feedback">
+                You must enter a First Name before submitting.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Last Name <span style="color:red;">*</span></label>
+            <input autocomplete="off" id ="lname" type="text" class="form-control"  required>
+            <div class="invalid-feedback">
+                You must enter a Last Name before submitting.
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="" class="form-label">Email address <span style="color:red;">*</span></label>
+            <input autocomplete="off" id="email" type="email" class="form-control" id="1" placeholder="name@gmail.com" required>
+            <div class="invalid-feedback">
+                You must enter a valid email address before submitting.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Phone Number (WhatsApp Preferred) <span style="color:red;">*</span></label>
+            <input pattern="^(?:7|0|(?:\+94))[0-9]{9,10}$" autocomplete="off" id ="phoneNo"  maxlength="10"     class="form-control" required>
+            <div class="invalid-feedback">
+                You must enter a valid mobile number before submitting.
+            </div>
+        </div>
+        <label for="" class="form-label">Submit Your Article <span style="color:red;">*</span></label>
+        <div class="mb-3" id="myForm" align="">
+           <input id='fileb' type="file" class="btn btn-outline-info" style="width:100%; text-align:left" name="myFile"><br>
+           <input id='filebtn' class="btn btn-light" style="margin-top:5px; display:none;" type="submit" value="Upload File" 
+           onclick="getFiles()">
+        </div>
+        <div id="output"></div>
+        <script>
+        function getFiles() {
+          const f = document.getElementById('fileb');
+          [...f.files].forEach((file, i) => {
+            const fr = new FileReader();
+            fr.onload = (e) => {
+              const data = e.target.result.split(",");
+              const obj = {fileName: f.files[i].name, mimeType: data[0].match(/:(\w.+);/)[1], data: data[1]};
+              google.script.run.withSuccessHandler((id) => {
+                console.log(id);
+                document.getElementById('myForm').style.display = 'none';
+                file = true;
+                document.getElementById('output').innerHTML ='File Uploaded Succesfully! <br><a target="_blank" id="url" href="'+id+'">'+id+'</a>' ;
+              }).saveFile(obj);
+            }
+            fr.readAsDataURL(file);
+          });
+          
+        }
+      </script>
+       <script>
+         document.getElementById('fileb').addEventListener("change",()=>{
+            document.getElementById('filebtn').style.display = 'block';
+            document.getElementById('output').innerHTML="";
+         })
+          function fileUploaded(status) {
+              
+            
+          }
+        </script>
+        <div id="addSpace" class="hide" style="width:100%; height:200px;"></div>
+        <div class=" mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+            <button id="btn" class="btn btn-outline-success me-md-2" type="submit">SUBMIT</button>
+        </div>
+        
+      </div>
+    </div> 
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   <script>
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+   
+
+        var fnamecanSubmit = false;
+        var lnamecanSubmit = false;
+        var emailcanSubmit = false;
+        var phoneNocanSubmit = false;
+        
+        document.getElementById('btn').addEventListener("click", submit);
+        function submit(){
+            var file = document.getElementById('myform');
+            var fname = document.getElementById('fname');
+            var lname = document.getElementById('lname');
+            var email = document.getElementById('email');
+            var phoneNo = document.getElementById('phoneNo');
+            
+            //check all fields for empty ones
+            if (fname.value.length == 0){
+              //do stuff
+              fname.classList.add('invalid','form-control-invalid');
+              fnamecanSubmit = false;
+              fname.addEventListener("keyup",()=>{
+                if (fname.value.length == 0){
+                  fname.classList.replace('correct','invalid');
+                  fnamecanSubmit = false;
+                }
+                else{
+                  fname.classList.replace('invalid','correct');
+                  fnamecanSubmit = true;
+                }
+                
+              })
+            }else{
+              fnamecanSubmit = true;
+            }
+            
+            if(lname.value.length == 0|| isValidName(lname.value))
+            {
+              lname.classList.add('invalid','form-control-invalid');
+              lnamecanSubmit = false;
+              lname.addEventListener("keyup",()=>{
+                if (lname.value.length == 0|| isValidName(lname.value)){
+                  lname.classList.replace('correct','invalid');
+                  lnamecanSubmit = false;
+                }
+                else{
+                  lname.classList.replace('invalid','correct');
+                  lnamecanSubmit = true;
+                }
+                
+              })
+            }else{
+              lnamecanSubmit = true;
+            }
+
+            if(email.value.length == 0 || !email.checkValidity()){
+              email.classList.add('invalid','form-control-invalid');
+              emailcanSubmit = false;
+              email.addEventListener("keyup",()=>{
+                if (email.value.length == 0 || !email.checkValidity()){
+                  email.classList.replace('correct','invalid');
+                  emailcanSubmit = false;
+                }
+                else{
+                  email.classList.replace('invalid','correct');
+                  emailcanSubmit = true;
+                }
+                
+              })
+            }else{
+              emailcanSubmit = true;
+            }
+
+            if(phoneNo.value.length == 0 || !phoneNo.checkValidity()){
+              phoneNo.classList.add('invalid','form-control-invalid');
+              phoneNocanSubmit = false;
+              phoneNo.addEventListener("keyup",()=>{
+                if (phoneNo.value.length == 0 || !phoneNo.checkValidity()){
+                  phoneNo.classList.replace('correct','invalid');
+                  phoneNocanSubmit = false;
+                }
+                else{
+                  phoneNo.classList.replace('invalid','correct');
+                  phoneNocanSubmit = true;
+                }
+                
+              })
+            }else{
+              phoneNocanSubmit = true;
+            }
+
+            if(document.getElementById('output').innerHTML == ""){
+              document.getElementById('output').innerHTML = "Please Upload the File";
+            }
+        
+            //member 3 & 4 can be empty
+
+          if(fnamecanSubmit && lnamecanSubmit && phoneNocanSubmit && emailcanSubmit) {
+            console.log("submitted");
+            google.script.run.saveDetails([fname.value,lname.value,phoneNo.value,email.value, document.getElementById("url").href]);
+            document.getElementById("formContainer").style.display = "none";
+            document.getElementById("thankYou").style.display = "block";
+
+          }
+          else{
+            
+          }
+        }
+
+     function isValidName(text){
+         if(text.match(/\d/g) == null){
+           return false;
+         }
+         else{
+           return true;
+         }
+     }
+  </script>
+
+
+</body>
+</html>
