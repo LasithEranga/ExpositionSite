@@ -13,15 +13,7 @@ function saveDetails(answerArray){
 
 }
 function saveFile(obj) {
-  var blob = Utilities.newBlob(Utilities.base64Decode(obj.data), obj.mimeType, obj.fileName);
-  return DriveApp.createFile(blob).getUrl();
-}
-
-function uploadFiles(form) {
-  
-  try {
-    
-    var dropbox = "UploadFiles";
+   var dropbox = "UploadFiles";
     var folder, folders = DriveApp.getFoldersByName(dropbox);
     
     if (folders.hasNext()) {
@@ -30,15 +22,8 @@ function uploadFiles(form) {
       folder = DriveApp.createFolder(dropbox);
     }
     
-    var blob = form.myFile;    
-    var file = folder.createFile(blob);    
-    file.setDescription("Uploaded by " + form.myName);
-        
-    return "File uploaded successfully <br><a id='url' target='_blank' href='" + file.getUrl()+"'>"+file.getUrl()+"</a>";
-    
-  } catch (error) {
-    
-    return error.toString();
-  }
-  
+  var blob = Utilities.newBlob(Utilities.base64Decode(obj.data), obj.mimeType, obj.fileName);
+  var file = folder.createFile(blob);   
+  return file.getUrl();
 }
+
