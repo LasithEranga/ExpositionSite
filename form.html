@@ -326,7 +326,44 @@ h1{
 
 }
 </style>
-    
+    <style>
+      .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  margin: 8px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+    </style>
     <title>Document</title>
     <script>
       var file = false;
@@ -339,7 +376,7 @@ h1{
         <div class="wrapper-1">
         <div class="wrapper-2">
       <h1>Thank you !</h1>
-      <p>Thanks for registering with Exposition 2021.  </p>
+      <p>Thanks for submitting your article.  </p>
       
     </div>
     <div class="footer-like">
@@ -352,7 +389,7 @@ h1{
     </div>
     
     <div id="formContainer" class="container box  px-4" style="color:white">
-        <h1 class="display-6 text-center fw-bold py-2" >Register Now!</h1>
+        <h1 class="display-6 text-center fw-bold py-2" ><span style="font-family: 'Times New Roman', Times, serif;   font-size: 70px;">E</span><span style="font-family: 'Poppins', sans-serif;   font-weight: 400; color: white; font-size: 60px;">dify</span></h1>
         <div action="" class="needs-validation" novalidate>
         <div class="mb-3">
             <label for="" class="form-label">First Name <span style="color:red;">*</span></label>
@@ -386,15 +423,18 @@ h1{
                 You must enter a valid mobile number before submitting.
             </div>
         </div>
-        <label for="" class="form-label">Submit Your Article <span style="color:red;">*</span></label>
-        <div class="mb-3" id="myForm" align="">
-           <input id='fileb' type="file" class="btn btn-outline-info" style="width:100%; text-align:left" name="myFile"><br>
-           <input id='filebtn' class="btn btn-light" style="margin-top:5px; display:none;" type="submit" value="Upload File" 
-           onclick="getFiles()">
+        <label for="" class="form-label">Article <span style="color:red;">*</span></label>
+       
+        <div class="mb-3" id="myForm" align="" style="border:1px solid white; border-radius:5px;">
+           <div style="padding-left:10px;" id="output"></div>
+          <input type="button" id="loadFile" class="btn btn-dark" style="margin:3px; margin-left:10px;" value="Select a file" onclick="document.getElementById('fileb').click();" />
+           <input id='fileb' style="display:none" accept=".pdf" type="file" class="btn btn-outline-info" style="width:100%; text-align:left" name="myFile" onchange="getFiles()"><br>
+           
         </div>
-        <div id="output"></div>
+        
         <script>
         function getFiles() {
+          document.getElementById('output').innerHTML = "Please wait...  <div class='lds-ring'><div></div><div></div><div></div>";
           const f = document.getElementById('fileb');
           [...f.files].forEach((file, i) => {
             const fr = new FileReader();
@@ -403,9 +443,11 @@ h1{
               const obj = {fileName: f.files[i].name, mimeType: data[0].match(/:(\w.+);/)[1], data: data[1]};
               google.script.run.withSuccessHandler((id) => {
                 console.log(id);
-                document.getElementById('myForm').style.display = 'none';
+                document.getElementById('loadFile').value = 'Change File';
+                //document.getElementById('myForm').style.display = 'none';
                 file = true;
-                document.getElementById('output').innerHTML ='File Uploaded Succesfully! <br><a target="_blank" id="url" href="'+id+'">'+id+'</a>' ;
+
+                document.getElementById('output').innerHTML ='File : <a target="_blank" id="url" href="'+id+'">'+f.files[i].name+'</a>' ;
               }).saveFile(obj);
             }
             fr.readAsDataURL(file);
@@ -417,11 +459,7 @@ h1{
          document.getElementById('fileb').addEventListener("change",()=>{
             document.getElementById('filebtn').style.display = 'block';
             document.getElementById('output').innerHTML="";
-         })
-          function fileUploaded(status) {
-              
-            
-          }
+         });
         </script>
         <div id="addSpace" class="hide" style="width:100%; height:200px;"></div>
         <div class=" mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
